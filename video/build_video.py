@@ -79,7 +79,7 @@ def shoot():
         for i, (dur, content, *rest) in enumerate(S):
             f = OUT / f"s{i:02d}.png"
             if content == "ARCH":
-                (OUT/"arch.html").write_text(f"<style>{CSS}</style><body><div style='flex:1;display:flex;align-items:center;justify-content:center;background:#0b0f14'><img src='file:///home/claude/mortgageloanops/docs/architecture.svg' style='width:1920px'></div><div class=cap>{rest[0]}</div></body>")
+                (OUT/"arch.html").write_text(f"<style>{CSS}</style><body><div style='flex:1;display:flex;align-items:center;justify-content:center;background:#0b0f14'><img src='{(Path(__file__).resolve().parent.parent / 'docs' / 'architecture.svg').as_uri()}' style='width:1920px'></div><div class=cap>{rest[0]}</div></body>")
                 pg.goto("file:///tmp/vid/arch.html"); pg.wait_for_timeout(400)
             elif content == "UI":
                 pg.goto("http://127.0.0.1:8765/"); pg.wait_for_timeout(600)

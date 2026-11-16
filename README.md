@@ -1,8 +1,8 @@
 # MortgageLoanOps
 
-> **AWS CDS Agentic AI Partner Hackathon — Oct 2026**
+> **AWS CDS Agentic AI Partner Hackathon, Oct 2026**
 > 6 AWS services · 79 tests · runs dry-run with zero AWS credentials
-> [`python scripts/agentcore_demo.py`](scripts/agentcore_demo.py) — full agentic loop in ~2 s · [Judging notes](docs/JUDGING_NOTES.md) · [WhatsApp prize](docs/WHATSAPP_PRIZE.md)
+> [`python scripts/agentcore_demo.py`](scripts/agentcore_demo.py): full agentic loop in ~2 s · [Judging notes](docs/JUDGING_NOTES.md) · [WhatsApp prize](docs/WHATSAPP_PRIZE.md)
 
 Canadian mortgage operations on AWS in one small, dependency-free Python app. It combines three tools:
 
@@ -69,6 +69,36 @@ Architecture diagram: [docs/architecture.svg](docs/architecture.svg) · details:
 - **Home value** is a regional-index estimate (indicative anchors), not an appraisal or the full AVM. The AVM lives in the Benchmark Home Value project; its reported held-out accuracy is documented there.
 - **Tests** are unit tests and randomized invariant tests (10,000 cases each), not a backtest against real lending outcomes.
 - **Live AWS** paths (RCS, SMS, WhatsApp, SES, Bedrock Converse, SNS inbound parsing, SAM template) are verified with fake clients that assert request shapes and logic. They have **not** been run against a real AWS account from this repository yet; inbound event shapes should be confirmed against your own SNS payloads. Run `scripts/live_smoke.py` and `sam deploy` to prove them.
+
+## Project structure
+
+```text
+mortgageloanops/
+├── docs/                                  # Architecture, setup and submission notes (9 files)
+├── infra/                                 # Infrastructure template and IAM policy
+│   ├── iam-policy.json
+│   └── template.yaml
+├── mortgageloanops/                       # Application package (23 files)
+├── outbox/
+│   └── .gitkeep
+├── scripts/                               # Demo and live smoke scripts
+│   ├── agentcore_demo.py
+│   └── live_smoke.py
+├── tests/                                 # Automated tests
+│   ├── test_agent_conversation_lambda.py
+│   ├── test_aws_messaging.py
+│   ├── test_core.py
+│   ├── test_guardrails_policy.py
+│   ├── test_property_10k.py
+│   └── test_server.py
+├── video/                                 # Demo video builder
+│   └── build_video.py
+├── .gitignore
+├── LICENSE                                # Licence
+├── pyproject.toml                         # Python project settings
+├── README.md                              # This file
+└── requirements.txt                       # Python dependencies
+```
 
 ## License
 
