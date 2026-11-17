@@ -1,7 +1,7 @@
 """AWS Lambda entry points.
 
-* `api_handler`      — API Gateway (HTTP API / REST) proxy: POST /process, GET /health
-* `inbound_handler`  — SNS-triggered: inbound SMS / WhatsApp replies from AWS End User Messaging
+* `api_handler`:     API Gateway (HTTP API / REST) proxy: POST /process, GET /health
+* `inbound_handler`: SNS-triggered: inbound SMS / WhatsApp replies from AWS End User Messaging
 Environment: MLO_LIVE=1, MLO_SMS_ORIGINATION, MLO_WHATSAPP_PHONE_NUMBER_ID, MLO_EMAIL_FROM, MLO_BEDROCK_MODEL_ID (optional)
 """
 from __future__ import annotations
