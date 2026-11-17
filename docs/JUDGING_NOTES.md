@@ -53,7 +53,7 @@ python scripts/agentcore_demo.py
 
 ### Reproducibility
 ```bash
-git clone https://github.com/ALENZACODES/mortgageloanops && cd mortgageloanops
+git clone https://github.com/ALENZACODES/mortgage-loan-ops && cd mortgage-loan-ops
 pip install -e ".[dev]"
 pytest -q                  # 77 tests; includes 10,000-case property tests
 python -m mortgageloanops demo   # dry-run: 3 sample files, inspect outbox/

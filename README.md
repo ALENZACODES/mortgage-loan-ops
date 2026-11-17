@@ -21,7 +21,7 @@ Borrower messages go out through **AWS End User Messaging SMS and RCS**, **AWS E
 ## Quick start (no AWS account needed)
 
 ```bash
-git clone https://github.com/ALENZACODES/mortgageloanops && cd mortgageloanops
+git clone https://github.com/ALENZACODES/mortgage-loan-ops && cd mortgage-loan-ops
 python -m mortgageloanops demo        # runs 3 sample files, writes the would-be AWS requests to ./outbox
 python -m mortgageloanops serve 8000  # web UI at http://localhost:8000
 python scripts/agentcore_demo.py      # AgentCore end-to-end broker Q&A (dry-run, no AWS account needed)
@@ -73,7 +73,7 @@ Architecture diagram: [docs/architecture.svg](docs/architecture.svg) · details:
 ## Project structure
 
 ```text
-mortgageloanops/
+mortgage-loan-ops/
 ├── docs/                                  # Architecture, setup and submission notes (9 files)
 ├── infra/                                 # Infrastructure template and IAM policy
 │   ├── iam-policy.json

@@ -3,7 +3,7 @@
 No AWS account is needed. Requires Python 3.10+.
 
 ```bash
-git clone https://github.com/ALENZACODES/mortgageloanops && cd mortgageloanops
+git clone https://github.com/ALENZACODES/mortgage-loan-ops && cd mortgage-loan-ops
 python -m mortgageloanops demo          # 3 sample files: first-time buyer, renewal, refinance
 ls outbox                               # the exact AWS requests that would be sent (dry-run)
 python -m mortgageloanops serve 8000    # web UI: http://localhost:8000
